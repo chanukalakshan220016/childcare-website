@@ -1,0 +1,94 @@
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fffaf5;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(lab(80.19% -13.4 80.35 / 0.6), #50a80299),
+              url('https://images.unsplash.com/photo-1607605962060-8b9b77a1e0b5?auto=format&fit=crop&w=1400&q=80') center/cover;
+  height: 80vh;
+}
+
+/* Buttons */
+.btn-light {
+  color: #333;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-light:hover {
+  background-color: #f7f495;
+  transform: scale(1.05);
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+/* Prevent horizontal scroll */
+html, body { overflow-x: hidden; }
+
+/* Make the navbar brand wrap nicely and leave room for the toggler */
+.navbar-brand {
+  white-space: normal;        /* allow wrapping */
+  word-break: break-word;
+  max-width: calc(100% - 56px); /* leave space for the toggler button */
+}
+
+/* Hide the long location text on very small screens */
+.site-location { font-weight:600; }
+@media (max-width:575.98px) {
+  .site-location { display:none; }
+  .navbar-brand { font-size: 1rem; }
+}
+
+/* HERO: make it adapt better on phones */
+.hero {
+  height: 80vh;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 0;
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 768px) {
+  /* reduce hero height to avoid cropping under the navbar */
+  .hero {
+    height: calc(100vh - 56px); /* account for nav height */
+    min-height: 360px;
+    padding: 1.25rem 0;
+    background-position: center 30%;
+  }
+  .hero h1 { font-size: 1.6rem; line-height:1.15; }
+  .hero p.lead { font-size: 1rem; }
+}
+
+/* add safe horizontal padding inside hero */
+.hero .container { padding-left: 1rem; padding-right: 1rem; }
+
+/* Teacher / icon images: responsive max widths */
+.teacher-icon, .card img.safe-icon {
+  max-width: 120px;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .teacher-icon, .card img.safe-icon { max-width: 80px; }
+}
+
+/* If you used .w-25 on icons, override it on small screens */
+@media (max-width: 768px) {
+  .card img.w-25 { width: auto; max-width: 80px; }
+}
+
+/* Optional: make navbar sticky without overlap */
+.sticky-top { z-index: 1030; } /* ensure it sits above content */
+
+  
+
+
